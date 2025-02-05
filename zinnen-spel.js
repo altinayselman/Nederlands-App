@@ -208,25 +208,6 @@ function resetSentence() {
     updateSentenceBuilder();
 }
 
-function checkSentence() {
-    const userSentence = selectedWords.join(' ').toLowerCase();
-    const currentSentence = sentences[currentSentenceIndex];
-    
-    if (userSentence === currentSentence.correct) {
-        const points = calculatePoints();
-        score += points;
-        correctCount++;
-        showFeedback(true, currentSentence.english);
-    } else {
-        showFeedback(false, currentSentence.correct);
-    }
-    
-    currentSentenceIndex++;
-    setTimeout(() => {
-        showNextSentence();
-    }, 2000);
-}
-
 function calculatePoints() {
     const basePoints = {
         level1: 10,
@@ -236,12 +217,33 @@ function calculatePoints() {
     return basePoints[currentLevel];
 }
 
-function showFeedback(isCorrect, message) {
+function checkSentence() {
+    const userSentence = selectedWords.join(' ').toLowerCase();
+    const currentSentence = sentences[currentSentenceIndex];
+    const points = calculatePoints();
+    
+    if (userSentence === currentSentence.correct) {
+        score += points;
+        correctCount++;
+        showFeedback(true, points, currentSentence.english);
+    } else {
+        showFeedback(false, currentSentence.correct);
+    }
+    
+    currentSentenceIndex++;
+    updateUI();
+    
+    setTimeout(() => {
+        showNextSentence();
+    }, 2000);
+}
+
+function showFeedback(isCorrect, extra, message) {
     const feedbackContainer = document.getElementById('feedback-container');
     const feedbackClass = isCorrect ? 'alert-success' : 'alert-danger';
     let feedbackMessage = isCorrect ? 
-        `✅ Correct! +${calculatePoints()} punten<br><small class="text-muted">${message}</small>` : 
-        `❌ Onjuist! Juiste zin:<br>"${message}"`;
+        `✅ Correct! +${extra} punten<br><small class="text-muted">${message}</small>` : 
+        `❌ Onjuist! Juiste zin:<br>"${extra}"`;
     
     feedbackContainer.innerHTML = `
         <div class="alert ${feedbackClass} mt-3">
@@ -255,6 +257,26 @@ function endGame() {
     document.getElementById('game-over').style.display = 'block';
     document.getElementById('final-score').textContent = score;
     document.getElementById('final-correct').textContent = correctCount;
+}
+
+function restartGame() {
+    // Oyunu sıfırla
+    currentSentenceIndex = 0;
+    score = 0;
+    correctCount = 0;
+    selectedWords = [];
+    
+    // Yeni cümleleri karıştır
+    sentences = [...sentenceExercises[currentLevel].sentences];
+    shuffleSentences();
+    
+    // Arayüzü güncelle
+    document.getElementById('game').style.display = 'block';
+    document.getElementById('game-over').style.display = 'none';
+    
+    // İlk cümleyi göster
+    updateUI();
+    showNextSentence();
 }
 
 initGame(); 
