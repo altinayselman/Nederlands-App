@@ -1,0 +1,96 @@
+.bg-gradient {
+    background: linear-gradient(135deg, #13547a 0%, #80d0c7 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.main-card {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.game-title {
+    color: #13547a;
+    font-weight: bold;
+}
+
+.dutch-word {
+    font-size: 2.5rem;
+    margin: 30px 0;
+    padding: 30px;
+    background: linear-gradient(45deg, #ff6b6b 0%, #ff8e53 100%);
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.progress {
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    background-color: #4CAF50;
+    transition: width 0.3s ease;
+}
+
+.score-board {
+    text-align: center;
+}
+
+.input-group {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-control {
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+.btn {
+    padding: 12px 25px;
+    font-weight: bold;
+}
+
+.final-score-board {
+    background: linear-gradient(45deg, #f1c40f, #f39c12);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Animasyonlar */
+.dutch-word {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive tasarım */
+@media (max-width: 576px) {
+    .dutch-word {
+        font-size: 2rem;
+        padding: 20px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .input-group > * {
+        margin: 5px 0;
+        width: 100%;
+    }
+} 

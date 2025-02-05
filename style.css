@@ -1,0 +1,112 @@
+/* Genel Stiller */
+.bg-gradient {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Stilleri */
+.navbar {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand i {
+    margin-right: 10px;
+}
+
+/* Oyun Kartları */
+.game-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+}
+
+.game-card-inner {
+    padding: 2rem;
+    text-align: center;
+}
+
+.game-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.game-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.game-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.game-stats i {
+    color: #f1c40f;
+    margin-right: 5px;
+}
+
+.btn-play {
+    background: linear-gradient(45deg, #2ecc71, #27ae60);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-play:hover {
+    background: linear-gradient(45deg, #27ae60, #219a52);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.game-card {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Responsive Ayarlar */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .game-card {
+        margin-bottom: 1rem;
+    }
+} 

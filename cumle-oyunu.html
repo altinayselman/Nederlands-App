@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felemenkçe Cümle Kurma Oyunu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="game-styles.css">
+</head>
+<body class="bg-gradient">
+    <div class="container py-5">
+        <div class="card main-card">
+            <div class="card-body">
+                <a href="index.html" class="btn btn-sm btn-outline-primary mb-3">
+                    <i class="fas fa-arrow-left"></i> Ana Sayfaya Dön
+                </a>
+                <h1 class="text-center mb-4 game-title">Cümle Kurma Oyunu</h1>
+                <div id="game">
+                    <div class="score-board mb-4">
+                        <span class="badge bg-primary fs-4">Puan: <span id="score">0</span></span>
+                    </div>
+                    <div id="sentence-display" class="sentence-area mb-4"></div>
+                    <div id="words-container" class="words-area mb-4"></div>
+                    <div class="answer-area mb-3">
+                        <div id="answer-box" class="p-3 border rounded"></div>
+                    </div>
+                    <button class="btn btn-success" onclick="checkSentence()">Kontrol Et</button>
+                </div>
+                <div id="game-over" style="display: none;">
+                    <div class="text-center">
+                        <h2 class="mb-4">🎮 Oyun Bitti! 🎮</h2>
+                        <div class="final-score-board mb-4">
+                            <h3>Toplam Puanınız: <span id="final-score">0</span></h3>
+                        </div>
+                        <button class="btn btn-primary btn-lg" onclick="restartGame()">
+                            🔄 Yeniden Başlat
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="cumle-oyunu.js"></script>
+</body>
+</html> 
