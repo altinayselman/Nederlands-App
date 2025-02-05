@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Woordenschat Spel</title>
+    <title>Zinnen maken</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="game-styles.css">
@@ -16,9 +16,9 @@
                     <i class="fas fa-arrow-left"></i> Terug naar startpagina
                     <small class="d-block">Back to home</small>
                 </a>
-                <h1 class="text-center mb-4 game-title">Woordenschat Spel</h1>
+                <h1 class="text-center mb-4 game-title">Zinnen maken</h1>
                 <div id="game">
-                    <div id="category-container" class="mb-4"></div>
+                    <div id="level-container" class="mb-4"></div>
                     <div class="game-info mb-4">
                         <div class="stats-container">
                             <div class="stat-item">
@@ -26,38 +26,43 @@
                                 <span>Score: <span id="score">0</span></span>
                             </div>
                             <div class="stat-item">
-                                <i class="fas fa-fire"></i>
-                                <span>Reeks: <span id="streak">0</span></span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-book"></i>
-                                <span>Geleerd: <span id="learned-words">0</span></span>
+                                <i class="fas fa-check"></i>
+                                <span>Correct: <span id="correct-count">0</span></span>
                             </div>
                         </div>
                         <div class="progress mt-3">
                             <div id="progress-bar" class="progress-bar" role="progressbar"></div>
                         </div>
                     </div>
-                    <div id="word-display" class="word-section mb-4"></div>
-                    <div class="input-group mb-3">
-                        <input type="text" id="answer" class="form-control" placeholder="Schrijf de vertaling">
-                        <button class="btn btn-success" onclick="checkAnswer()">
-                            <i class="fas fa-check"></i> Controleren
-                        </button>
+                    <div class="sentence-section mb-4">
+                        <div class="sentence-instruction mb-3">
+                            <h4>Maak een correcte zin met deze woorden:</h4>
+                            <small class="text-muted d-block">Make a correct sentence with these words</small>
+                        </div>
+                        <div id="word-bank" class="word-bank mb-3"></div>
+                        <div id="sentence-builder" class="sentence-builder mb-3"></div>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-warning" onclick="resetSentence()">
+                                <i class="fas fa-undo"></i> Reset
+                            </button>
+                            <button class="btn btn-success" onclick="checkSentence()">
+                                <i class="fas fa-check"></i> Controleren
+                            </button>
+                        </div>
                     </div>
                     <div id="feedback-container"></div>
                 </div>
                 <div id="game-over" style="display: none;">
                     <div class="text-center">
-                        <h2 class="mb-4">🎮 Spel afgelopen! 🎮</h2>
+                        <h2 class="mb-4">🎮 Oefening afgelopen! 🎮</h2>
                         <div class="final-stats mb-4">
                             <div class="stat-box">
                                 <h3>Totale score</h3>
                                 <span id="final-score">0</span>
                             </div>
                             <div class="stat-box">
-                                <h3>Geleerde woorden</h3>
-                                <span id="final-learned">0</span>
+                                <h3>Correcte zinnen</h3>
+                                <span id="final-correct">0</span>
                             </div>
                         </div>
                         <button class="btn btn-primary btn-lg" onclick="restartGame()">
@@ -68,6 +73,6 @@
             </div>
         </div>
     </div>
-    <script src="kelime-oyunu.js"></script>
+    <script src="zinnen-spel.js"></script>
 </body>
 </html> 

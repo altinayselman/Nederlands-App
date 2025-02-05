@@ -1,54 +1,57 @@
 const wordCategories = {
-    basic: {
-        name: 'Temel Kelimeler',
+    beginner: {
+        name: 'Beginnersniveau',
         words: [
-            { dutch: "hallo", turkish: "merhaba" },
-            { dutch: "dag", turkish: "günaydın" },
-            { dutch: "doei", turkish: "hoşçakal" },
-            { dutch: "ja", turkish: "evet" },
-            { dutch: "nee", turkish: "hayır" },
-            { dutch: "alsjeblieft", turkish: "lütfen" },
-            { dutch: "dank je wel", turkish: "teşekkür ederim" },
-            { dutch: "graag gedaan", turkish: "rica ederim" }
+            { dutch: "hallo", english: "hello", image: "images/hello.png", points: 5 },
+            { dutch: "dag", english: "good day", image: "images/goodday.png", points: 5 },
+            { dutch: "doei", english: "goodbye", image: "images/goodbye.png", points: 5 },
+            { dutch: "ja", english: "yes", image: "images/yes.png", points: 5 },
+            { dutch: "nee", english: "no", image: "images/no.png", points: 5 },
+            { dutch: "dank je wel", english: "thank you", image: "images/thankyou.png", points: 5 },
+            { dutch: "alsjeblieft", english: "please", image: "images/please.png", points: 5 },
+            { dutch: "goedemorgen", english: "good morning", image: "images/goodmorning.png", points: 5 },
+            { dutch: "goedemiddag", english: "good afternoon", image: "images/goodafternoon.png", points: 5 },
+            { dutch: "goedenavond", english: "good evening", image: "images/goodevening.png", points: 5 }
         ]
     },
-    numbers: {
-        name: 'Sayılar',
+    intermediate: {
+        name: 'Middenniveau',
         words: [
-            { dutch: "een", turkish: "bir" },
-            { dutch: "twee", turkish: "iki" },
-            { dutch: "drie", turkish: "üç" },
-            { dutch: "vier", turkish: "dört" },
-            { dutch: "vijf", turkish: "beş" },
-            { dutch: "zes", turkish: "altı" },
-            { dutch: "zeven", turkish: "yedi" },
-            { dutch: "acht", turkish: "sekiz" },
-            { dutch: "negen", turkish: "dokuz" },
-            { dutch: "tien", turkish: "on" }
+            { dutch: "computer", english: "computer", image: "images/computer.png", points: 10 },
+            { dutch: "telefoon", english: "phone", image: "images/phone.png", points: 10 },
+            { dutch: "boek", english: "book", image: "images/book.png", points: 10 },
+            { dutch: "tafel", english: "table", image: "images/table.png", points: 10 },
+            { dutch: "stoel", english: "chair", image: "images/chair.png", points: 10 },
+            { dutch: "huis", english: "house", image: "images/house.png", points: 10 },
+            { dutch: "school", english: "school", image: "images/school.png", points: 10 },
+            { dutch: "werk", english: "work", image: "images/work.png", points: 10 },
+            { dutch: "eten", english: "food", image: "images/food.png", points: 10 },
+            { dutch: "drinken", english: "drink", image: "images/drink.png", points: 10 }
         ]
     },
-    colors: {
-        name: 'Renkler',
+    advanced: {
+        name: 'Gevorderd niveau',
         words: [
-            { dutch: "rood", turkish: "kırmızı" },
-            { dutch: "blauw", turkish: "mavi" },
-            { dutch: "geel", turkish: "sarı" },
-            { dutch: "groen", turkish: "yeşil" },
-            { dutch: "zwart", turkish: "siyah" },
-            { dutch: "wit", turkish: "beyaz" },
-            { dutch: "oranje", turkish: "turuncu" },
-            { dutch: "paars", turkish: "mor" },
-            { dutch: "bruin", turkish: "kahverengi" },
-            { dutch: "grijs", turkish: "gri" }
+            { dutch: "verantwoordelijkheid", english: "responsibility", image: "images/responsibility.png", points: 15 },
+            { dutch: "gebeurtenis", english: "event", image: "images/event.png", points: 15 },
+            { dutch: "ontwikkeling", english: "development", image: "images/development.png", points: 15 },
+            { dutch: "belangrijk", english: "important", image: "images/important.png", points: 15 },
+            { dutch: "ervaring", english: "experience", image: "images/experience.png", points: 15 },
+            { dutch: "samenwerking", english: "collaboration", image: "images/collaboration.png", points: 15 },
+            { dutch: "mogelijkheid", english: "possibility", image: "images/possibility.png", points: 15 },
+            { dutch: "onderzoek", english: "research", image: "images/research.png", points: 15 },
+            { dutch: "maatschappij", english: "society", image: "images/society.png", points: 15 },
+            { dutch: "wetenschap", english: "science", image: "images/science.png", points: 15 }
         ]
     }
-    // Diğer kategoriler buraya eklenebilir
 };
 
-let currentCategory = 'basic';
+let currentCategory = 'beginner';
 let currentWordIndex = 0;
 let score = 0;
 let words = [];
+let streak = 0;
+let learnedWords = new Set();
 
 function initGame() {
     createCategorySelector();
@@ -59,7 +62,7 @@ function createCategorySelector() {
     const container = document.getElementById('category-container');
     container.innerHTML = `
         <div class="form-group">
-            <label for="category-select" class="form-label">Kategori Seçin:</label>
+            <label for="category-select" class="form-label">Kies een niveau:</label>
             <select class="form-select" id="category-select" onchange="changeCategory(this.value)">
                 ${Object.entries(wordCategories).map(([key, category]) => 
                     `<option value="${key}">${category.name}</option>`
@@ -77,6 +80,7 @@ function changeCategory(newCategory) {
 function resetGame() {
     currentWordIndex = 0;
     score = 0;
+    streak = 0;
     words = [...wordCategories[currentCategory].words];
     shuffleWords();
     updateUI();
@@ -92,17 +96,32 @@ function shuffleWords() {
 
 function updateUI() {
     document.getElementById('score').textContent = score;
-    document.getElementById('game').style.display = 'block';
-    document.getElementById('game-over').style.display = 'none';
+    document.getElementById('streak').textContent = streak;
+    document.getElementById('learned-words').textContent = learnedWords.size;
     
-    // İlerleme çubuğunu güncelle
     const progress = (currentWordIndex / words.length) * 100;
     document.getElementById('progress-bar').style.width = `${progress}%`;
+    
+    document.getElementById('game').style.display = 'block';
+    document.getElementById('game-over').style.display = 'none';
 }
 
 function showNextWord() {
     if (currentWordIndex < words.length) {
-        document.getElementById('word-display').textContent = words[currentWordIndex].dutch;
+        const currentWord = words[currentWordIndex];
+        const wordDisplay = document.getElementById('word-display');
+        
+        wordDisplay.innerHTML = `
+            <div class="word-container">
+                <img src="${currentWord.image}" alt="${currentWord.dutch}" class="word-image">
+                <h2 class="dutch-word">${currentWord.dutch}</h2>
+                <small class="text-muted">${currentWord.english}</small>
+                <button onclick="playPronunciation('${currentWord.dutch}')" class="btn btn-sm btn-info mt-2">
+                    <i class="fas fa-volume-up"></i> Uitspraak
+                </button>
+            </div>
+        `;
+        
         document.getElementById('answer').value = '';
         document.getElementById('answer').focus();
     } else {
@@ -112,13 +131,17 @@ function showNextWord() {
 
 function checkAnswer() {
     const userAnswer = document.getElementById('answer').value.toLowerCase().trim();
-    const correctAnswer = words[currentWordIndex].turkish;
+    const currentWord = words[currentWordIndex];
     
-    if (userAnswer === correctAnswer) {
-        score += 10;
-        showFeedback(true);
+    if (userAnswer === currentWord.english.toLowerCase()) {
+        streak++;
+        const bonusPoints = Math.floor(streak / 3) * 5;
+        score += currentWord.points + bonusPoints;
+        learnedWords.add(currentWord.dutch);
+        showFeedback(true, bonusPoints);
     } else {
-        showFeedback(false, correctAnswer);
+        streak = 0;
+        showFeedback(false, currentWord.english);
     }
     
     currentWordIndex++;
@@ -129,12 +152,16 @@ function checkAnswer() {
     }, 1500);
 }
 
-function showFeedback(isCorrect, correctAnswer = '') {
+function showFeedback(isCorrect, extra) {
     const feedbackContainer = document.getElementById('feedback-container');
     const feedbackClass = isCorrect ? 'alert-success' : 'alert-danger';
-    const feedbackMessage = isCorrect ? 
-        '✅ Doğru!' : 
-        `❌ Yanlış! Doğru cevap: ${correctAnswer}`;
+    let feedbackMessage = isCorrect ? 
+        `✅ Correct! ${extra > 0 ? `Bonus punten: +${extra}` : ''}` : 
+        `❌ Onjuist! Juiste antwoord: ${extra}`;
+    
+    if (streak > 2 && isCorrect) {
+        feedbackMessage += ` 🔥 ${streak} woorden reeks!`;
+    }
     
     feedbackContainer.innerHTML = `
         <div class="alert ${feedbackClass} mt-3">
@@ -151,10 +178,17 @@ function endGame() {
     document.getElementById('game').style.display = 'none';
     document.getElementById('game-over').style.display = 'block';
     document.getElementById('final-score').textContent = score;
+    document.getElementById('final-learned').textContent = learnedWords.size;
 }
 
 function restartGame() {
     resetGame();
+}
+
+function playPronunciation(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'nl-NL';
+    window.speechSynthesis.speak(utterance);
 }
 
 // Enter tuşu ile cevap verme
