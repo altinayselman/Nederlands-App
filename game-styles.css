@@ -402,4 +402,191 @@
     .option-container:hover {
         transform: none;
     }
+}
+
+/* Quiz özel stilleri */
+.quiz-content {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.question-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.question-header i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.option-container {
+    background-color: #f8f9fa;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+.option-container:hover {
+    background-color: #e9ecef;
+    transform: translateX(0.5rem);
+}
+
+.option-container.selected {
+    background-color: #e3f2fd;
+    border-color: #2196f3;
+}
+
+.option-container label {
+    cursor: pointer;
+    padding: 1rem;
+    margin: 0;
+    width: 100%;
+    display: block;
+}
+
+/* Dinleme soruları için */
+.audio-button {
+    background: linear-gradient(45deg, #2196f3, #1976d2);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.audio-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Konuşma soruları için */
+.speak-button {
+    background: linear-gradient(45deg, #4caf50, #388e3c);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.speak-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.recording-animation {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Kategori butonları için yeni stiller */
+#category-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.category-btn {
+    flex: 0 1 auto;
+    min-width: 150px;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: white;
+    border: 2px solid #2196f3;
+    color: #2196f3;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.category-btn:hover {
+    background: #2196f3;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+}
+
+.category-btn.active {
+    background: #2196f3;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+}
+
+.category-btn i {
+    font-size: 1.2rem;
+}
+
+/* Kontrol butonları için yeni stiller */
+.control-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.control-btn:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.control-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Responsive düzenlemeler */
+@media (max-width: 768px) {
+    .quiz-content {
+        padding: 1rem;
+    }
+    
+    .option-container:hover {
+        transform: none;
+    }
+    
+    .category-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Kontrol butonu için özel stiller */
+.btn-primary[onclick="checkAnswer()"] {
+    background: linear-gradient(45deg, #2196f3, #1976d2);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary[onclick="checkAnswer()"]:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary[onclick="checkAnswer()"][disabled] {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 } 
