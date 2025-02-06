@@ -482,110 +482,216 @@
 
 /* Badges Header Styles */
 .badges-header {
-    text-align: center;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 15px;
-    margin-bottom: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.badges-title i {
-    font-size: 3rem;
-    color: #f39c12;
-    margin-bottom: 1rem;
-    animation: rotate 2s infinite linear;
-}
-
-.badges-title h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+.badges-title {
     color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
-.badges-title p {
-    font-size: 1.2rem;
-    color: #34495e;
+.badges-description {
+    color: #666;
+    font-size: 1.1rem;
 }
 
 .badges-summary {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
     margin-top: 2rem;
-    background: rgba(44, 62, 80, 0.05);
-    padding: 1.5rem;
-    border-radius: 10px;
 }
 
 .summary-item {
+    background: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    min-width: 200px;
     text-align: center;
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    min-width: 120px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.summary-item:hover {
+    transform: translateY(-5px);
 }
 
 .summary-item .count {
     font-size: 2.5rem;
-    font-weight: 700;
-    color: #2c3e50;
-    display: block;
+    font-weight: bold;
+    color: #1e3c72;
     margin-bottom: 0.5rem;
 }
 
 .summary-item .label {
-    font-size: 1rem;
-    color: #34495e;
-    font-weight: 500;
+    color: #666;
+    font-size: 0.9rem;
 }
 
-/* Badge Categories */
 .badges-categories {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 2rem;
-    background: rgba(255, 255, 255, 0.95);
     padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .category-filter {
-    background: #ecf0f1;
     border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 20px;
-    color: #2c3e50;
-    font-weight: 600;
+    background: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    color: #666;
+    font-weight: 500;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .category-filter:hover {
-    background: #e74c3c;
-    color: white;
-    transform: translateY(-2px);
+    background: #f8f9fa;
+    color: #1e3c72;
 }
 
 .category-filter.active {
-    background: #e74c3c;
-    color: white;
-    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+    background: #1e3c72;
+    color: #fff;
 }
 
-/* Badge Detail Modal */
+.badge-card {
+    height: 100%;
+    perspective: 1000px;
+}
+
+.badge-card-inner {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    height: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.badge-card:hover .badge-card-inner {
+    transform: rotateY(10deg);
+}
+
+.badge-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.badge-icon i {
+    font-size: 2rem;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.badge-icon.unlocked {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    animation: shine 2s infinite;
+}
+
+.badge-icon.unlocked i {
+    color: #fff;
+    animation: rotate 2s linear infinite;
+}
+
+.badge-level {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    color: #1e3c72;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.badge-card h3 {
+    color: #2c3e50;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.badge-card p {
+    color: #666;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.badge-progress {
+    margin-bottom: 1rem;
+}
+
+.progress {
+    height: 8px;
+    background-color: #f1f1f1;
+}
+
+.progress-bar {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    transition: width 0.5s ease;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.progress-info .current {
+    color: #1e3c72;
+    font-weight: 500;
+}
+
+.progress-info .status {
+    color: #666;
+}
+
+.btn-details {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    background: #f8f9fa;
+    color: #1e3c72;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-details:hover {
+    background: #1e3c72;
+    color: #fff;
+}
+
 .badge-detail-content {
     padding: 1rem;
-    color: #333;
 }
 
 .badge-detail-content h4 {
-    color: #2a5298;
+    color: #2c3e50;
     margin-bottom: 1rem;
-    font-weight: bold;
 }
 
 .badge-detail-content p {
@@ -596,23 +702,7 @@
 .badge-detail-content h5 {
     color: #1e3c72;
     margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.badge-detail-content ul {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 1.5rem;
-}
-
-.badge-detail-content ul li {
-    color: #555;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
-}
-
-.badge-detail-content ul li:last-child {
-    border-bottom: none;
+    font-size: 1rem;
 }
 
 /* Animations */
@@ -670,4 +760,149 @@
     .nav-link-content {
         padding: 0.25rem 0;
     }
-} 
+}
+
+/* Profil Sayfası Stilleri */
+.profile-avatar {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.05);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #f8f9fa;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.stat-box i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-box h5 {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-box span {
+    color: #2c3e50;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.progress-item {
+    margin-bottom: 1.5rem;
+}
+
+.progress-item:last-child {
+    margin-bottom: 0;
+}
+
+.progress-item span {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.progress {
+    height: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    transition: width 0.5s ease;
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.profile-actions button {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.profile-actions button:hover {
+    transform: translateY(-2px);
+}
+
+/* Giriş/Kayıt Form Stilleri */
+.input-group-text {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    color: #6c757d;
+}
+
+.input-group-text i {
+    width: 1rem;
+    text-align: center;
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.modal-content {
+    border: none;
+    border-radius: 1rem;
+}
+
+.modal-header {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .stat-box {
+        padding: 1rem;
+    }
+
+    .stat-box i {
+        font-size: 1.5rem;
+    }
+
+    .stat-box span {
+        font-size: 1.2rem;
+    }
+}

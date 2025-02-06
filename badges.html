@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verdiende Badges | Earned Badges</title>
+    <title>Badges | Leer Nederlands</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -42,7 +42,7 @@
                             <div class="nav-link-content">
                                 <div class="badge-link">
                                     <i class="fas fa-award"></i>
-                                    <span class="badge-count">3</span>
+                                    <span class="badge-count">0</span>
                                 </div>
                                 <div class="nav-text">
                                     <span>Badges</span>
@@ -63,7 +63,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#profiel">
+                        <a class="nav-link" href="profile.html">
                             <div class="nav-link-content">
                                 <i class="fas fa-user"></i>
                                 <div class="nav-text">
@@ -80,362 +80,63 @@
 
     <!-- Ana İçerik -->
     <div class="container py-5">
-        <div class="badges-header">
-            <div class="badges-title">
-                <i class="fas fa-award mb-3"></i>
-                <h1 class="text-dark">Verdiende Badges</h1>
-                <p class="text-secondary">Volg je voortgang en verdien nieuwe badges!</p>
-            </div>
+        <!-- Başlık ve Açıklama -->
+        <div class="badges-header text-center mb-5">
+            <h1 class="badges-title">Verdiende Badges</h1>
+            <p class="badges-description">Volg je voortgang en verdien nieuwe badges!</p>
+            
+            <!-- Özet Bilgiler -->
             <div class="badges-summary mt-4">
                 <div class="summary-item">
-                    <span class="count text-primary">3</span>
-                    <span class="label text-secondary">Ontgrendeld</span>
+                    <div class="count">0</div>
+                    <div class="label">Verdiende badges</div>
                 </div>
                 <div class="summary-item">
-                    <span class="count text-primary">6</span>
-                    <span class="label text-secondary">Totaal</span>
+                    <div class="count">6</div>
+                    <div class="label">Totaal badges</div>
                 </div>
                 <div class="summary-item">
-                    <span class="count text-success">50%</span>
-                    <span class="label text-secondary">Voltooid</span>
+                    <div class="count">0%</div>
+                    <div class="label">Voltooid</div>
                 </div>
             </div>
         </div>
-        
+
+        <!-- Kategori Filtreleri -->
         <div class="badges-categories mb-4">
-            <button class="category-filter active" data-category="all">Alle badges</button>
-            <button class="category-filter" data-category="unlocked">Ontgrendeld</button>
-            <button class="category-filter" data-category="locked">Vergrendeld</button>
+            <button class="category-filter active" data-category="all">
+                Alle badges
+            </button>
+            <button class="category-filter" data-category="unlocked">
+                Verdiende badges
+            </button>
+            <button class="category-filter" data-category="locked">
+                Vergrendelde badges
+            </button>
         </div>
-        
-        <div class="row g-4">
-            <!-- Kelime Oyunu Rozetleri -->
-            <div class="col-md-6 col-lg-4" data-category="unlocked">
-                <div class="badge-card">
-                    <div class="badge-card-inner">
-                        <div class="badge-icon unlocked">
-                            <i class="fas fa-book"></i>
-                            <div class="badge-level">Niveau 1</div>
-                        </div>
-                        <h3>Woordmeester</h3>
-                        <p>100 woorden geleerd</p>
-                        <div class="badge-progress">
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 75%"></div>
-                            </div>
-                            <div class="progress-info">
-                                <span class="current">75/100</span>
-                                <span class="status">In uitvoering</span>
-                            </div>
-                        </div>
-                        <div class="badge-details mt-3">
-                            <button class="btn-details" onclick="showBadgeDetails('woordmeester')">
-                                <i class="fas fa-info-circle"></i> Details bekijken
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Gramer Rozetleri -->
-            <div class="col-md-6 col-lg-4" data-category="locked">
-                <div class="badge-card">
-                    <div class="badge-card-inner">
-                        <div class="badge-icon">
-                            <i class="fas fa-book-reader"></i>
-                            <div class="badge-level">Niveau 2</div>
-                        </div>
-                        <h3>Grammatica Expert</h3>
-                        <p>50 oefeningen voltooid</p>
-                        <div class="badge-progress">
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 40%"></div>
-                            </div>
-                            <div class="progress-info">
-                                <span class="current">20/50</span>
-                                <span class="status">Nog 30 te gaan</span>
-                            </div>
-                        </div>
-                        <div class="badge-details mt-3">
-                            <button class="btn-details" onclick="showBadgeDetails('grammatica')">
-                                <i class="fas fa-info-circle"></i> Details bekijken
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Quiz Rozetleri -->
-            <div class="col-md-6 col-lg-4" data-category="unlocked">
-                <div class="badge-card">
-                    <div class="badge-card-inner">
-                        <div class="badge-icon unlocked">
-                            <i class="fas fa-crown"></i>
-                            <div class="badge-level">Niveau 3</div>
-                        </div>
-                        <h3>Quiz Champion</h3>
-                        <p>Score van 1000 bereikt</p>
-                        <div class="badge-progress completed">
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 100%"></div>
-                            </div>
-                            <div class="progress-info">
-                                <span class="current">1000/1000</span>
-                                <span class="status">Voltooid!</span>
-                            </div>
-                        </div>
-                        <div class="badge-details mt-3">
-                            <button class="btn-details" onclick="showBadgeDetails('quiz')">
-                                <i class="fas fa-info-circle"></i> Details bekijken
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dinleme Rozetleri -->
-            <div class="col-md-6 col-lg-4" data-category="unlocked">
-                <div class="badge-card">
-                    <div class="badge-card-inner">
-                        <div class="badge-icon unlocked">
-                            <i class="fas fa-headphones"></i>
-                            <div class="badge-level">Niveau 4</div>
-                        </div>
-                        <h3>Luister Expert</h3>
-                        <p>25 luisteroefeningen voltooid</p>
-                        <div class="badge-progress">
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 100%"></div>
-                            </div>
-                            <div class="progress-info">
-                                <span class="current">25/25</span>
-                                <span class="status">Voltooid!</span>
-                            </div>
-                        </div>
-                        <div class="badge-details mt-3">
-                            <button class="btn-details" onclick="showBadgeDetails('luister')">
-                                <i class="fas fa-info-circle"></i> Details bekijken
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Telaffuz Rozetleri -->
-            <div class="col-md-6 col-lg-4" data-category="unlocked">
-                <div class="badge-card">
-                    <div class="badge-card-inner">
-                        <div class="badge-icon">
-                            <i class="fas fa-microphone"></i>
-                            <div class="badge-level">Niveau 5</div>
-                        </div>
-                        <h3>Uitspraak Meester</h3>
-                        <p>30 uitspraakoefeningen voltooid</p>
-                        <div class="badge-progress">
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 60%"></div>
-                            </div>
-                            <div class="progress-info">
-                                <span class="current">18/30</span>
-                                <span class="status">In uitvoering</span>
-                            </div>
-                        </div>
-                        <div class="badge-details mt-3">
-                            <button class="btn-details" onclick="showBadgeDetails('uitspraak')">
-                                <i class="fas fa-info-circle"></i> Details bekijken
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cümle Kurma Rozetleri -->
-            <div class="col-md-6 col-lg-4" data-category="locked">
-                <div class="badge-card">
-                    <div class="badge-card-inner">
-                        <div class="badge-icon">
-                            <i class="fas fa-pencil-alt"></i>
-                            <div class="badge-level">Niveau 6</div>
-                        </div>
-                        <h3>Zinnen Expert</h3>
-                        <p>40 zinnen correct gemaakt</p>
-                        <div class="badge-progress">
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 25%"></div>
-                            </div>
-                            <div class="progress-info">
-                                <span class="current">10/40</span>
-                                <span class="status">Nog 30 te gaan</span>
-                            </div>
-                        </div>
-                        <div class="badge-details mt-3">
-                            <button class="btn-details" onclick="showBadgeDetails('zinnen')">
-                                <i class="fas fa-info-circle"></i> Details bekijken
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Rozetler -->
+        <div class="row g-4" id="badges-container">
+            <!-- Rozetler JavaScript ile dinamik olarak eklenecek -->
         </div>
     </div>
 
-    <!-- Rozet Detay Modalı -->
+    <!-- Rozet Detay Modal -->
     <div class="modal fade" id="badgeDetailModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Badge Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body">
-                    <div id="badgeDetailContent"></div>
+                <div class="modal-body" id="badgeDetailContent">
+                    <!-- Rozet detayları JavaScript ile eklenecek -->
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer mt-auto py-3" style="background-color: #1e3c72;">
-        <div class="container text-center text-white">
-            <p>
-                © 2024 Leer Nederlands. Alle rechten voorbehouden.
-                <small class="d-block">All rights reserved.</small>
-            </p>
-        </div>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Kategori filtreleme
-        document.querySelectorAll('.category-filter').forEach(button => {
-            button.addEventListener('click', () => {
-                // Aktif sınıfı güncelle
-                document.querySelector('.category-filter.active').classList.remove('active');
-                button.classList.add('active');
-
-                // Filtreleme
-                const category = button.dataset.category;
-                document.querySelectorAll('.badge-card').forEach(card => {
-                    const parent = card.closest('[data-category]');
-                    if (category === 'all' || parent.dataset.category === category) {
-                        parent.style.display = 'block';
-                    } else {
-                        parent.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Rozet detaylarını göster
-        function showBadgeDetails(badgeId) {
-            const badgeDetails = {
-                woordmeester: {
-                    title: 'Woordmeester Badge',
-                    description: 'Deze badge verdien je door 100 Nederlandse woorden te leren.',
-                    requirements: [
-                        '100 woorden correct vertalen',
-                        'Minimaal 75% accuraatheid',
-                        '3 dagen achter elkaar oefenen'
-                    ],
-                    rewards: [
-                        '+500 XP bonus',
-                        'Toegang tot gevorderde woordenlijsten',
-                        'Speciale avatar frame'
-                    ]
-                },
-                grammatica: {
-                    title: 'Grammatica Expert Badge',
-                    description: 'Deze badge verdien je door 50 grammatica oefeningen te voltooien.',
-                    requirements: [
-                        '50 grammatica oefeningen correct maken',
-                        'Minimaal 80% accuraatheid',
-                        '3 dagen achter elkaar oefenen'
-                    ],
-                    rewards: [
-                        '+750 XP bonus',
-                        'Toegang tot gevorderde grammatica oefeningen',
-                        'Speciale avatar frame'
-                    ]
-                },
-                quiz: {
-                    title: 'Quiz Champion Badge',
-                    description: 'Deze badge verdien je door een score van 1000 te behalen in de quiz.',
-                    requirements: [
-                        'Een score van 1000 behalen in de quiz',
-                        'Minimaal 100% accuraatheid',
-                        '3 dagen achter elkaar oefenen'
-                    ],
-                    rewards: [
-                        '+1000 XP bonus',
-                        'Toegang tot speciale quiz oefeningen',
-                        'Speciale avatar frame'
-                    ]
-                },
-                luister: {
-                    title: 'Luister Expert Badge',
-                    description: 'Deze badge verdien je door 25 luisteroefeningen te voltooien.',
-                    requirements: [
-                        '25 luisteroefeningen correct voltooien',
-                        'Minimaal 100% accuraatheid',
-                        '3 dagen achter elkaar oefenen'
-                    ],
-                    rewards: [
-                        '+500 XP bonus',
-                        'Toegang tot speciale luister oefeningen',
-                        'Speciale avatar frame'
-                    ]
-                },
-                uitspraak: {
-                    title: 'Uitspraak Meester Badge',
-                    description: 'Deze badge verdien je door 30 uitspraakoefeningen te voltooien.',
-                    requirements: [
-                        '30 uitspraakoefeningen correct voltooien',
-                        'Minimaal 80% accuraatheid',
-                        '3 dagen achter elkaar oefenen'
-                    ],
-                    rewards: [
-                        '+750 XP bonus',
-                        'Toegang tot speciale uitspraak oefeningen',
-                        'Speciale avatar frame'
-                    ]
-                },
-                zinnen: {
-                    title: 'Zinnen Expert Badge',
-                    description: 'Deze badge verdien je door 40 zinnen correct te maken.',
-                    requirements: [
-                        '40 zinnen correct maken',
-                        'Minimaal 75% accuraatheid',
-                        '3 dagen achter elkaar oefenen'
-                    ],
-                    rewards: [
-                        '+500 XP bonus',
-                        'Toegang tot speciale zinnen oefeningen',
-                        'Speciale avatar frame'
-                    ]
-                }
-            };
-
-            const details = badgeDetails[badgeId];
-            if (!details) return;
-
-            const content = `
-                <div class="badge-detail-content">
-                    <h4>${details.title}</h4>
-                    <p>${details.description}</p>
-                    <h5>Vereisten:</h5>
-                    <ul>
-                        ${details.requirements.map(req => `<li>${req}</li>`).join('')}
-                    </ul>
-                    <h5>Beloningen:</h5>
-                    <ul>
-                        ${details.rewards.map(reward => `<li>${reward}</li>`).join('')}
-                    </ul>
-                </div>
-            `;
-
-            document.getElementById('badgeDetailContent').innerHTML = content;
-            new bootstrap.Modal(document.getElementById('badgeDetailModal')).show();
-        }
-    </script>
+    <script src="badges.js"></script>
 </body>
 </html> 
