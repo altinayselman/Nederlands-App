@@ -109,4 +109,204 @@
     .game-card {
         margin-bottom: 1rem;
     }
+}
+
+/* Mega Quiz Card Styles */
+.mega-quiz-card {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    border-radius: 25px;
+    margin: 3rem -1rem;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.mega-quiz-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+    opacity: 0.3;
+}
+
+.mega-quiz-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.mega-quiz-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.mega-quiz-badge {
+    background: linear-gradient(45deg, #f1c40f, #f39c12);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+    transform: rotate(-2deg);
+}
+
+.mega-quiz-title {
+    flex: 1;
+}
+
+.mega-quiz-title h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mega-quiz-title p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.mega-quiz-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.mega-feature {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.mega-feature:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.feature-icon i {
+    font-size: 1.5rem;
+    color: #f1c40f;
+}
+
+.feature-text h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.feature-text p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    color: #fff;
+}
+
+.mega-quiz-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mega-quiz-stats {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat-item i {
+    color: #f1c40f;
+}
+
+.mega-quiz-btn {
+    background: linear-gradient(45deg, #f1c40f, #f39c12);
+    color: #2c3e50;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+}
+
+.mega-quiz-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
+    color: #2c3e50;
+}
+
+.mega-quiz-btn i {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .mega-quiz-card {
+        margin: 2rem -0.5rem;
+        padding: 1.5rem;
+    }
+    
+    .mega-quiz-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .mega-quiz-features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .mega-feature {
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .feature-icon {
+        margin: 0 auto 1rem;
+    }
+    
+    .mega-quiz-footer {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .mega-quiz-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
 } 
