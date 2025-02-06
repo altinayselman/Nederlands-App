@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uitspraak | Pronunciation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="game-styles.css">
+</head>
+<body class="bg-gradient">
+    <div class="container py-5">
+        <div class="card main-card">
+            <div class="card-body">
+                <a href="index.html" class="btn btn-sm btn-outline-primary mb-3">
+                    <i class="fas fa-arrow-left"></i> Terug naar startpagina
+                    <small class="d-block">Back to home</small>
+                </a>
+                <h1 class="text-center mb-4 game-title">Uitspraak oefenen</h1>
+                <div id="game">
+                    <div id="level-container" class="mb-4"></div>
+                    <div class="game-info mb-4">
+                        <div class="stats-container">
+                            <div class="stat-item">
+                                <i class="fas fa-star"></i>
+                                <span>Score: <span id="score">0</span></span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-check"></i>
+                                <span>Correct: <span id="correct-count">0</span></span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-microphone"></i>
+                                <span>Niveau: <span id="current-level">1</span></span>
+                            </div>
+                        </div>
+                        <div class="progress mt-3">
+                            <div id="progress-bar" class="progress-bar" role="progressbar"></div>
+                        </div>
+                    </div>
+                    <div class="pronunciation-section mb-4">
+                        <div class="word-display text-center mb-4">
+                            <div class="word-icon">
+                                <i id="word-icon" class="fas fa-volume-up"></i>
+                            </div>
+                            <h2 id="current-word" class="dutch-word mb-2"></h2>
+                            <p id="phonetic" class="text-muted mb-3"></p>
+                            <div class="pronunciation-tips mb-4">
+                                <h5>Uitspraaktips:</h5>
+                                <p id="tips" class="text-muted"></p>
+                            </div>
+                            <div class="d-flex justify-content-center gap-3">
+                                <button class="btn btn-info" onclick="playWord()">
+                                    <i class="fas fa-volume-up"></i> Luister
+                                </button>
+                                <button class="btn btn-success" onclick="startRecording()">
+                                    <i class="fas fa-microphone"></i> Spreek
+                                </button>
+                                <button class="btn btn-primary" onclick="showNextWord()">
+                                    <i class="fas fa-forward"></i> Volgende
+                                </button>
+                            </div>
+                        </div>
+                        <div id="recording-status" class="text-center mt-3">
+                            <div class="recording-waves" style="display: none;">
+                                <i class="fas fa-circle recording-dot"></i>
+                                <span>Opnemen...</span>
+                            </div>
+                        </div>
+                        <div id="feedback-container" class="text-center mt-3"></div>
+                    </div>
+                </div>
+                <div id="game-over" style="display: none;">
+                    <div class="text-center">
+                        <h2 class="mb-4">🎮 Oefening afgelopen! 🎮</h2>
+                        <div class="final-stats mb-4">
+                            <div class="stat-box">
+                                <h3>Totale score</h3>
+                                <span id="final-score">0</span>
+                            </div>
+                            <div class="stat-box">
+                                <h3>Correcte uitspraak</h3>
+                                <span id="final-correct">0</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-lg" onclick="restartGame()">
+                            🔄 Opnieuw oefenen
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="uitspraak-spel.js"></script>
+</body>
+</html> 

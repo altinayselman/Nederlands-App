@@ -280,4 +280,126 @@
     .match-card-back i {
         font-size: 1.5em;
     }
+}
+
+/* Dilbilgisi oyunu için ek stiller */
+.grammar-content {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.rule-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.rule-header i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.rule-header h3 {
+    margin: 0;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.example-box {
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+.example-box strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.exercise-section {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+}
+
+.form-check {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.form-check:hover {
+    border-color: var(--primary-color);
+    transform: translateX(0.5rem);
+}
+
+.form-check-input:checked + .form-check-label {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.learned-rules li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.learned-rules i {
+    color: #28a745;
+}
+
+/* Responsive düzenlemeler */
+@media (max-width: 768px) {
+    .grammar-content {
+        padding: 1rem;
+    }
+    
+    .exercise-section {
+        padding: 1rem;
+    }
+    
+    .form-check:hover {
+        transform: none;
+    }
+}
+
+.option-container {
+    background-color: #f8f9fa;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.option-container:hover {
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+    transform: translateX(0.5rem);
+}
+
+.option-container.selected {
+    background-color: #e3f2fd;
+    border-color: #2196f3;
+}
+
+@media (max-width: 768px) {
+    .option-container:hover {
+        transform: none;
+    }
 } 
