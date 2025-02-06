@@ -8,12 +8,63 @@
 
 /* Navbar Stilleri */
 .navbar {
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.navbar-brand i {
-    margin-right: 10px;
+.brand-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brand-content i {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.brand-subtitle {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.nav-link-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+.nav-link-content i {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.nav-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-text span {
+    color: #fff;
+    font-weight: 500;
+}
+
+.nav-text small {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.8rem;
 }
 
 /* Oyun Kartları */
@@ -308,5 +359,315 @@
     .mega-quiz-stats {
         flex-direction: column;
         gap: 1rem;
+    }
+}
+
+/* Badge Link Styles */
+.badge-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.badge-link i {
+    font-size: 1.2rem;
+    color: #f1c40f;
+    transition: transform 0.3s ease;
+}
+
+.badge-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #e74c3c;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+}
+
+.badge-link:hover i {
+    transform: rotate(20deg);
+}
+
+/* Badge Card Styles */
+.badge-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.badge-card:hover {
+    transform: translateY(-10px);
+}
+
+.badge-card-inner {
+    padding: 2rem;
+    text-align: center;
+}
+
+.badge-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.badge-icon.unlocked {
+    background: linear-gradient(45deg, #f1c40f, #f39c12);
+    animation: shine 2s infinite;
+}
+
+.badge-icon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.badge-card h3 {
+    color: #2a5298;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.badge-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.badge-progress {
+    text-align: center;
+}
+
+.badge-progress .progress {
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    background: #ecf0f1;
+}
+
+.badge-progress .progress-bar {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    border-radius: 5px;
+}
+
+.badge-progress span {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.badge-progress .progress-info {
+    color: #555;
+}
+
+@keyframes shine {
+    0% { box-shadow: 0 0 5px #f1c40f; }
+    50% { box-shadow: 0 0 20px #f1c40f; }
+    100% { box-shadow: 0 0 5px #f1c40f; }
+}
+
+/* Badges Header Styles */
+.badges-header {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.badges-title i {
+    font-size: 3rem;
+    color: #f39c12;
+    margin-bottom: 1rem;
+    animation: rotate 2s infinite linear;
+}
+
+.badges-title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.badges-title p {
+    font-size: 1.2rem;
+    color: #34495e;
+}
+
+.badges-summary {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    background: rgba(44, 62, 80, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.summary-item {
+    text-align: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    min-width: 120px;
+}
+
+.summary-item .count {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.summary-item .label {
+    font-size: 1rem;
+    color: #34495e;
+    font-weight: 500;
+}
+
+/* Badge Categories */
+.badges-categories {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.category-filter {
+    background: #ecf0f1;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    color: #2c3e50;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.category-filter:hover {
+    background: #e74c3c;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.category-filter.active {
+    background: #e74c3c;
+    color: white;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+}
+
+/* Badge Detail Modal */
+.badge-detail-content {
+    padding: 1rem;
+    color: #333;
+}
+
+.badge-detail-content h4 {
+    color: #2a5298;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.badge-detail-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.badge-detail-content h5 {
+    color: #1e3c72;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.badge-detail-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.badge-detail-content ul li {
+    color: #555;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.badge-detail-content ul li:last-child {
+    border-bottom: none;
+}
+
+/* Animations */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes shine {
+    0% { box-shadow: 0 0 5px #f1c40f; }
+    50% { box-shadow: 0 0 20px #f1c40f; }
+    100% { box-shadow: 0 0 5px #f1c40f; }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .badges-summary {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .summary-item {
+        padding: 1rem;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .summary-item .count {
+        font-size: 2rem;
+    }
+    
+    .badges-categories {
+        flex-wrap: wrap;
+        padding: 0.5rem;
+    }
+    
+    .category-filter {
+        width: calc(50% - 0.5rem);
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .brand-content {
+        gap: 0.5rem;
+    }
+    
+    .brand-content i {
+        font-size: 1.5rem;
+    }
+    
+    .brand-title {
+        font-size: 1.1rem;
+    }
+    
+    .nav-link-content {
+        padding: 0.25rem 0;
     }
 } 

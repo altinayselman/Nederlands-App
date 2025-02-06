@@ -10,11 +10,16 @@
 </head>
 <body class="bg-gradient">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1e3c72;">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <i class="fas fa-language"></i> Leer Nederlands
-                <small class="d-block">Learn Dutch</small>
+                <div class="brand-content">
+                    <i class="fas fa-language"></i>
+                    <div class="brand-text">
+                        <span class="brand-title">Leer Nederlands</span>
+                        <small class="brand-subtitle">Learn Dutch</small>
+                    </div>
+                </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -23,20 +28,49 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link active" href="index.html">
-                            Startpagina
-                            <small class="d-block">Home</small>
+                            <div class="nav-link-content">
+                                <i class="fas fa-home"></i>
+                                <div class="nav-text">
+                                    <span>Startpagina</span>
+                                    <small>Home</small>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="badges.html">
+                            <div class="nav-link-content">
+                                <div class="badge-link">
+                                    <i class="fas fa-award"></i>
+                                    <span class="badge-count">3</span>
+                                </div>
+                                <div class="nav-text">
+                                    <span>Badges</span>
+                                    <small>Verdiende badges</small>
+                                </div>
+                            </div>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#statistieken">
-                            Statistieken
-                            <small class="d-block">Statistics</small>
+                            <div class="nav-link-content">
+                                <i class="fas fa-chart-bar"></i>
+                                <div class="nav-text">
+                                    <span>Statistieken</span>
+                                    <small>Statistics</small>
+                                </div>
+                            </div>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#profiel">
-                            Profiel
-                            <small class="d-block">Profile</small>
+                            <div class="nav-link-content">
+                                <i class="fas fa-user"></i>
+                                <div class="nav-text">
+                                    <span>Profiel</span>
+                                    <small>Profile</small>
+                                </div>
+                            </div>
                         </a>
                     </li>
                 </ul>
