@@ -180,8 +180,76 @@ function showRegisterForm() {
 
 // Profil düzenleme
 function editProfile() {
-    // Profil düzenleme modalını göster (henüz oluşturulmadı)
-    alert('Deze functie komt binnenkort beschikbaar');
+    const modal = new bootstrap.Modal(document.getElementById('editProfileModal'));
+    
+    // Mevcut kullanıcı bilgilerini forma doldur
+    document.getElementById('edit-name').value = currentUser.name;
+    document.getElementById('edit-email').value = currentUser.email;
+    document.getElementById('edit-password').value = '';
+    
+    modal.show();
+}
+
+// Profil düzenleme formunu dinle
+document.getElementById('edit-profile-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    handleProfileEdit();
+});
+
+// Profil düzenleme işlemini yönet
+function handleProfileEdit() {
+    const name = document.getElementById('edit-name').value;
+    const email = document.getElementById('edit-email').value;
+    const newPassword = document.getElementById('edit-password').value;
+
+    // Kullanıcıları getir
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const userIndex = users.findIndex(u => u.id === currentUser.id);
+
+    if (userIndex === -1) {
+        showError('Gebruiker niet gevonden');
+        return;
+    }
+
+    // E-posta kontrolü (eğer değiştiyse)
+    if (email !== currentUser.email) {
+        const emailExists = users.some(u => u.id !== currentUser.id && u.email === email);
+        if (emailExists) {
+            showError('Dit e-mailadres is al in gebruik');
+            return;
+        }
+    }
+
+    // Kullanıcı bilgilerini güncelle
+    const updatedUser = {
+        ...users[userIndex],
+        name,
+        email,
+        avatar: `${DEFAULT_AVATAR}${name.toLowerCase().replace(/\s+/g, '')}&backgroundColor=2a5298&textColor=ffffff`
+    };
+
+    // Şifre değiştiyse güncelle
+    if (newPassword) {
+        updatedUser.password = newPassword;
+    }
+
+    // Kullanıcıyı güncelle
+    users[userIndex] = updatedUser;
+    localStorage.setItem('users', JSON.stringify(users));
+    
+    // Mevcut kullanıcıyı güncelle
+    currentUser = updatedUser;
+    localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+
+    // Arayüzü güncelle
+    updateUserInterface();
+
+    // Modalı kapat
+    const modal = bootstrap.Modal.getInstance(document.getElementById('editProfileModal'));
+    modal.hide();
+
+    // Başarı mesajı göster
+    showSuccess('Profiel succesvol bijgewerkt!');
 }
 
 // Hata mesajı göster
