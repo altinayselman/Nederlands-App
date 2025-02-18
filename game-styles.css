@@ -1,5 +1,5 @@
 .bg-gradient {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
     min-height: 100vh;
 }
 
@@ -871,4 +871,381 @@
         gap: 1.5rem;
         text-align: center;
     }
+}
+
+/* Giriş Ekranı */
+.game-host-section, .game-join-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.game-host-section:hover, .game-join-section:hover {
+    transform: translateY(-5px);
+}
+
+.game-code-input {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Bekleme Odası */
+.code-box {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+#room-code {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+.player-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.player-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    animation: playerJoin 0.3s ease-out;
+}
+
+.player-avatar {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin: 0 auto 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-avatar i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.player-name {
+    color: #fff;
+    font-weight: 500;
+    margin: 0;
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.setting-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.setting-item label {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+/* Oyun Ekranı */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.timer-display {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.question-counter {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.question-display {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.question-display h3 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.answers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.answer-option {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    color: #fff;
+}
+
+.answer-option:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.answer-option.selected {
+    background: rgba(46, 204, 113, 0.3);
+    border-color: #2ecc71;
+}
+
+.answer-option.correct {
+    background: rgba(46, 204, 113, 0.3);
+    border-color: #2ecc71;
+}
+
+.answer-option.wrong {
+    background: rgba(231, 76, 60, 0.3);
+    border-color: #e74c3c;
+}
+
+.player-progress-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.player-progress {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.player-progress .name {
+    color: #fff;
+    font-weight: 500;
+}
+
+.player-progress .score {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* Sonuç Ekranı */
+.podium-display {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
+    margin: 2rem 0;
+    height: 200px;
+}
+
+.podium-place {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.podium-place:hover {
+    transform: translateY(-10px);
+}
+
+.podium-avatar {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.podium-block {
+    width: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.first-place .podium-block {
+    height: 120px;
+    background: linear-gradient(45deg, #f1c40f, #f39c12);
+}
+
+.second-place .podium-block {
+    height: 90px;
+    background: linear-gradient(45deg, #bdc3c7, #95a5a6);
+}
+
+.third-place .podium-block {
+    height: 60px;
+    background: linear-gradient(45deg, #d35400, #e67e22);
+}
+
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.result-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.result-player {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.result-stats {
+    display: flex;
+    gap: 1rem;
+    color: #fff;
+}
+
+/* Animasyonlar */
+@keyframes playerJoin {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes countdown {
+    from {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .answers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .podium-display {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    .podium-block {
+        width: 200px;
+        height: 60px !important;
+    }
+}
+
+/* Bildirimler */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification.error {
+    background: rgba(231, 76, 60, 0.9);
+    color: white;
+}
+
+/* Host Tacı */
+.host-crown {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: #ffd700;
+    font-size: 1.2rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Loading Durumu */
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Oyuncu Kartı Güncellemeleri */
+.player-avatar {
+    position: relative;
+}
+
+.player-name {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
 } 
