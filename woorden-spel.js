@@ -142,10 +142,10 @@ function checkAnswer() {
         const bonusPoints = Math.floor(streak / 3) * 5;
         score += currentWord.points + bonusPoints;
         learnedWords.add(currentWord.dutch);
-        showFeedback(true, bonusPoints, currentWord.dutch);
+        showFeedback(true, bonusPoints);
     } else {
         streak = 0;
-        showFeedback(false, currentWord.dutch);
+        showFeedback(false, currentWord.dutch, currentWord.meaning);
     }
     
     currentWordIndex++;
@@ -156,12 +156,12 @@ function checkAnswer() {
     }, 2000);
 }
 
-function showFeedback(isCorrect, extra, correctWord) {
+function showFeedback(isCorrect, extra, meaning = '') {
     const feedbackContainer = document.getElementById('feedback-container');
     const feedbackClass = isCorrect ? 'alert-success' : 'alert-danger';
     let feedbackMessage = isCorrect ? 
         `✅ Correct! ${extra > 0 ? `Bonus punten: +${extra}` : ''}` : 
-        `❌ Onjuist! Het juiste woord is: "${correctWord}"`;
+        `❌ Onjuist! Het juiste woord is: "${extra}" (${meaning})`;
     
     if (streak > 2 && isCorrect) {
         feedbackMessage += ` 🔥 ${streak} woorden reeks!`;

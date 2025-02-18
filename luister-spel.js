@@ -174,6 +174,35 @@ function endGame() {
     document.getElementById('final-level').textContent = currentLevel.replace('level', '');
 }
 
+function restartGame() {
+    // Oyun durumunu sıfırla
+    currentSentenceIndex = 0;
+    score = 0;
+    playsLeft = 2;
+    
+    // Cümleleri yeniden karıştır
+    sentences = [...audioExercises[currentLevel].sentences];
+    shuffleSentences();
+    
+    // Arayüzü güncelle
+    document.getElementById('game').style.display = 'block';
+    document.getElementById('game-over').style.display = 'none';
+    document.getElementById('score').textContent = '0';
+    document.getElementById('current-level').textContent = currentLevel.replace('level', '');
+    document.getElementById('plays-left').textContent = '2';
+    document.getElementById('progress-bar').style.width = '0%';
+    
+    // İlk cümleyi göster
+    showNextWord();
+    
+    // Play butonunu aktif hale getir
+    document.getElementById('play-button').disabled = false;
+    
+    // Input alanını temizle
+    document.getElementById('answer').value = '';
+    document.getElementById('answer').focus();
+}
+
 document.getElementById('play-button').addEventListener('click', playCurrentSentence);
 
 document.getElementById('answer').addEventListener('keypress', function(e) {

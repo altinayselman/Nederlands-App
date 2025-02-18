@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">
+                        <a class="nav-link" href="index.html">
                             <div class="nav-link-content">
                                 <i class="fas fa-home"></i>
                                 <div class="nav-text">
@@ -37,27 +37,59 @@
                             </div>
                         </a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="gamesDropdown" role="button" data-bs-toggle="dropdown">
+                            <div class="nav-link-content">
+                                <i class="fas fa-gamepad"></i>
+                                <div class="nav-text">
+                                    <span>Spellen</span>
+                                    <small>Games</small>
+                                </div>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li>
+                                <a class="dropdown-item" href="woorden-spel.html">
+                                    <i class="fas fa-book me-2"></i>Woordenschat
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="grammatica-spel.html">
+                                    <i class="fas fa-pencil-alt me-2"></i>Grammatica
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="luister-spel.html">
+                                    <i class="fas fa-headphones me-2"></i>Luisteroefening
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="uitspraak-spel.html">
+                                    <i class="fas fa-microphone me-2"></i>Uitspraak
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="zinnen-spel.html">
+                                    <i class="fas fa-comment me-2"></i>Zinnen maken
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="quiz-spel.html">
+                                    <i class="fas fa-question-circle me-2"></i>Quiz
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="badges.html">
                             <div class="nav-link-content">
                                 <div class="badge-link">
                                     <i class="fas fa-award"></i>
-                                    <span class="badge-count">3</span>
+                                    <span class="badge-count">0</span>
                                 </div>
                                 <div class="nav-text">
                                     <span>Badges</span>
                                     <small>Verdiende badges</small>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#statistieken">
-                            <div class="nav-link-content">
-                                <i class="fas fa-chart-bar"></i>
-                                <div class="nav-text">
-                                    <span>Statistieken</span>
-                                    <small>Statistics</small>
                                 </div>
                             </div>
                         </a>
@@ -80,10 +112,14 @@
 
     <!-- Ana İçerik -->
     <div class="container py-5">
-        <h1 class="text-center text-white mb-5">
-            Taaloefeningen
-            <small class="d-block">Language Exercises</small>
-        </h1>
+        <div class="main-title text-center mb-4">
+            <h1 class="display-4 text-white fw-bold mb-1">
+                <span class="highlight">Taaloefeningen</span>
+            </h1>
+            <p class="lead text-white-50 mb-0">
+                <span class="highlight-sub">Language Exercises</span>
+            </p>
+        </div>
         
         <div class="row g-4">
             <!-- Kelime Öğrenme Oyunu -->
@@ -330,21 +366,45 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Footer -->
+        <footer class="mt-5 py-4">
+            <div class="container">
+                <div class="row g-4 justify-content-between align-items-center">
+                    <div class="col-md-6">
+                        <div class="footer-brand">
+                            <i class="fas fa-language"></i>
+                            <div class="footer-brand-text">
+                                <h5 class="mb-0">Leer Nederlands</h5>
+                                <small>Learn Dutch</small>
+                            </div>
+                        </div>
+                        <p class="text-white-50 mt-3">
+                            Leer Nederlands op een leuke en interactieve manier!
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <div class="footer-links">
+                            <a href="index.html" class="me-3"><i class="fas fa-home"></i> Startpagina</a>
+                            <a href="badges.html" class="me-3"><i class="fas fa-award"></i> Badges</a>
+                            <a href="profile.html"><i class="fas fa-user"></i> Profiel</a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="footer-divider my-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <small class="text-white-50">&copy; 2025 Leer Nederlands. Alle rechten voorbehouden.</small>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <small class="text-white-50">
+                            <i class="fas fa-code"></i> Ontwikkeld door Selman Altinay
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer mt-auto py-3" style="background-color: #1e3c72;">
-        <div class="container text-center text-white">
-            <p>
-                © 2024 Leer Nederlands. Alle rechten voorbehouden.
-                <small class="d-block">All rights reserved.</small>
-            </p>
-            <p class="mt-2">
-                Deze applicatie is ontwikkeld door Selman Altinay.
-                <small class="d-block">This application is developed by Selman Altinay.</small>
-            </p>
-        </div>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
