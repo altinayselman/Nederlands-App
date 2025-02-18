@@ -368,44 +368,99 @@
         </div>
         
         <!-- Footer -->
-        <footer class="mt-5 py-4">
+        <footer>
             <div class="container">
-                <div class="row g-4 justify-content-between align-items-center">
-                    <div class="col-md-6">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
                         <div class="footer-brand">
                             <i class="fas fa-language"></i>
                             <div class="footer-brand-text">
-                                <h5 class="mb-0">Leer Nederlands</h5>
+                                <h5>Leer Nederlands</h5>
                                 <small>Learn Dutch</small>
                             </div>
                         </div>
-                        <p class="text-white-50 mt-3">
-                            Leer Nederlands op een leuke en interactieve manier!
-                        </p>
                     </div>
-                    <div class="col-md-6 text-md-end">
+                    <div class="col-md-4">
                         <div class="footer-links">
-                            <a href="index.html" class="me-3"><i class="fas fa-home"></i> Startpagina</a>
-                            <a href="badges.html" class="me-3"><i class="fas fa-award"></i> Badges</a>
-                            <a href="profile.html"><i class="fas fa-user"></i> Profiel</a>
+                            <a href="woorden-spel.html">Woordenschat</a>
+                            <a href="grammatica-spel.html">Grammatica</a>
+                            <a href="luister-spel.html">Luisteren</a>
+                            <a href="uitspraak-spel.html">Uitspraak</a>
                         </div>
                     </div>
-                </div>
-                <hr class="footer-divider my-4">
-                <div class="row align-items-center">
-                    <div class="col-md-6 text-center text-md-start">
-                        <small class="text-white-50">&copy; 2025 Leer Nederlands. Alle rechten voorbehouden.</small>
+                    <div class="col-md-4 text-center">
+                        <button class="contact-btn" data-bs-toggle="modal" data-bs-target="#contactModal">
+                            <i class="fas fa-envelope"></i> Contact met ontwikkelaar
+                        </button>
                     </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <small class="text-white-50">
-                            <i class="fas fa-code"></i> Ontwikkeld door Selman Altinay
-                        </small>
+                </div>
+                <hr class="footer-divider">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p class="mb-0 text-white-50">© 2025 Leer Nederlands - Ontwikkeld door Selman Altinay</p>
                     </div>
                 </div>
             </div>
         </footer>
+
+        <!-- İletişim Modal -->
+        <div class="modal fade" id="contactModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            <i class="fas fa-envelope"></i> Contact met ontwikkelaar
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Naam</label>
+                                <input type="text" class="form-control" id="name" placeholder="Je naam" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mailadres</label>
+                                <input type="email" class="form-control" id="email" placeholder="Je e-mailadres" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Bericht</label>
+                                <textarea class="form-control" id="message" rows="4" placeholder="Je bericht" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="fas fa-paper-plane"></i> Bericht verzenden
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Başarı Modal -->
+        <div class="modal fade" id="successModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title">
+                            <i class="fas fa-check-circle"></i> Succes!
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body text-center py-4">
+                        <i class="fas fa-envelope-open-text fa-3x text-success mb-3"></i>
+                        <h4>Bericht succesvol verzonden!</h4>
+                        <p class="mb-0">Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Sluiten</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="contact.js"></script>
 </body>
 </html> 
