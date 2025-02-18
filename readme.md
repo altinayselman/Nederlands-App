@@ -48,6 +48,8 @@ Wil je bijdragen aan de ontwikkeling van deze app? Voel je vrij om een pull requ
 
 Deze applicatie is open-source en beschikbaar onder de MIT-licentie.
 
+-------------------------------------------------------------------------------------------------
+
 🇬🇧 Nederlands-App
 
 Welcome to Nederlands-App! 🎉 This is an interactive application designed to help you learn Dutch in a fun and effective way. Whether you want to expand your vocabulary, practice grammar, or improve your listening skills, this app offers various games to support your learning! 🏆
