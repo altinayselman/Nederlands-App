@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="340" viewBox="0 0 1280 340" role="img" aria-labelledby="t d">
+<title id="t">Leer Nederlands</title><desc id="d">Learn Dutch through quick browser games</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f5aa6"/><stop offset=".5" stop-color="#1e3c72"/><stop offset="1" stop-color="#16285a"/></linearGradient>
+<linearGradient id="co" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff6b6b"/><stop offset="1" stop-color="#ff8e53"/></linearGradient>
+<radialGradient id="o1"><stop offset="0" stop-color="#ff6b6b" stop-opacity=".55"/><stop offset="1" stop-color="#ff6b6b" stop-opacity="0"/></radialGradient>
+<radialGradient id="o2"><stop offset="0" stop-color="#f1c40f" stop-opacity=".35"/><stop offset="1" stop-color="#f1c40f" stop-opacity="0"/></radialGradient>
+<linearGradient id="sh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<clipPath id="r"><rect width="1280" height="340" rx="24"/></clipPath>
+</defs>
+<style>
+text{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif}
+.wc{animation:fl 6s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.orb1{animation:d1 14s ease-in-out infinite} .orb2{animation:d2 16s ease-in-out infinite}
+@keyframes d1{0%,100%{transform:translate(0,0)}50%{transform:translate(120px,-30px)}}
+@keyframes d2{0%,100%{transform:translate(0,0)}50%{transform:translate(-110px,25px)}}
+.shine{animation:sh 7s ease-in-out infinite}
+@keyframes sh{0%{transform:translateX(-500px)}60%,100%{transform:translateX(1400px)}}
+.rise{animation:up 1.1s cubic-bezier(.16,1,.3,1) both} .rise2{animation:up 1.1s .25s cubic-bezier(.16,1,.3,1) both}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.wc,.orb1,.orb2,.shine,.rise,.rise2{animation:none}}
+</style>
+<g clip-path="url(#r)">
+<rect width="1280" height="340" fill="url(#bg)"/>
+<circle class="orb1" cx="160" cy="330" r="260" fill="url(#o1)"/>
+<circle class="orb2" cx="1130" cy="40" r="240" fill="url(#o2)"/>
+<g class="wc" style="animation-delay:-0.0s"><g transform="translate(96 70) rotate(-6)">
+<rect width="94" height="58" rx="14" fill="#ffffff" opacity=".96"/>
+<text x="16" y="28" font-size="20" font-weight="700" fill="#1e3c72">huis</text>
+<text x="16" y="47" font-size="13" fill="#4f5a70">house</text></g></g>
+<g class="wc" style="animation-delay:-1.2s"><g transform="translate(1010 52) rotate(5)">
+<rect width="109" height="58" rx="14" fill="#ffffff" opacity=".96"/>
+<text x="16" y="28" font-size="20" font-weight="700" fill="#1e3c72">fiets</text>
+<text x="16" y="47" font-size="13" fill="#4f5a70">bicycle</text></g></g>
+<g class="wc" style="animation-delay:-2.1s"><g transform="translate(60 250) rotate(4)">
+<rect width="199" height="58" rx="14" fill="#ffffff" opacity=".96"/>
+<text x="16" y="28" font-size="20" font-weight="700" fill="#1e3c72">goedemorgen</text>
+<text x="16" y="47" font-size="13" fill="#4f5a70">good morning</text></g></g>
+<g class="wc" style="animation-delay:-0.6s"><g transform="translate(980 236) rotate(-4)">
+<rect width="199" height="58" rx="14" fill="#ffffff" opacity=".96"/>
+<text x="16" y="28" font-size="20" font-weight="700" fill="#1e3c72">dank je wel</text>
+<text x="16" y="47" font-size="13" fill="#4f5a70">thank you</text></g></g>
+<g class="wc" style="animation-delay:-1.7s"><g transform="translate(1120 150) rotate(3)">
+<rect width="94" height="58" rx="14" fill="#ffffff" opacity=".96"/>
+<text x="16" y="28" font-size="20" font-weight="700" fill="#1e3c72">boek</text>
+<text x="16" y="47" font-size="13" fill="#4f5a70">book</text></g></g>
+<g class="wc" style="animation-delay:-2.6s"><g transform="translate(230 166) rotate(-3)">
+<rect width="109" height="58" rx="14" fill="#ffffff" opacity=".96"/>
+<text x="16" y="28" font-size="20" font-weight="700" fill="#1e3c72">trein</text>
+<text x="16" y="47" font-size="13" fill="#4f5a70">train</text></g></g>
+
+<g class="rise"><rect x="586" y="58" width="108" height="108" rx="30" fill="url(#co)"/>
+<text x="640" y="129" text-anchor="middle" font-size="46" font-weight="700" fill="#fff">NL</text></g>
+<g class="rise2"><text x="640" y="236" text-anchor="middle" font-size="64" font-weight="700" fill="#fff" letter-spacing="-1.5">Leer Nederlands</text>
+<text x="640" y="280" text-anchor="middle" font-size="22" fill="#ffffff" fill-opacity=".82">Learn Dutch through quick, bilingual browser games</text></g>
+<rect class="shine" x="0" y="0" width="360" height="340" fill="url(#sh)" transform="skewX(-18)"/>
+</g>
+</svg>
