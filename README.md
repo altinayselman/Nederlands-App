@@ -179,7 +179,7 @@ python -m http.server 8080
 npx serve .
 ```
 
-Then open <http://localhost:8080> (or the address `serve` prints). Opening `index.html` directly from disk also works for most games.
+Then open the address the server prints (port 8080 in the first example). Opening `index.html` directly from disk also works for most games.
 
 **Requirements**
 
@@ -235,7 +235,7 @@ No. Every game works straight away. The profile page lets you create a local pro
 <details>
 <summary><b>Why does the pronunciation game not hear me?</b></summary>
 <br>
-It uses your browser's speech recognition. Use a browser that supports it (for example Chrome or Edge), allow microphone access, and open the site over <code>https</code> or <code>localhost</code>.
+It uses your browser's speech recognition. Use a browser that supports it (for example Chrome or Edge), allow microphone access, and open the site over <code>https</code> (as on GitHub Pages) or from a local server on your own machine.
 </details>
 
 <details>
